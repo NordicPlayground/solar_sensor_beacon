@@ -4,11 +4,13 @@ Works with the nRF52 (tested), but is likely to work for the nRF51 as well
 (not tested). Power performance is, however, not expected to be as good for
 the nRF51.
 
+
 == About
 This project demonstrates the good power performance of the nRF5x Series and
 the nRF52 Series in particular. The project is not a part of the official
 Nordic Semiconductor SDK. Developers are anyway welcome to contribute and
 provide feedback.
+
 
 == Usage
 The project file for the sensor beacon firmware is located in the
@@ -19,22 +21,23 @@ The nRF Master Control Panel is available from Google Play and can be used
 to observe the beacon (temperature and pressure) once the firmware has been
 loaded and the solar panel is facing light at about 500 LUX.
 
+
 == Getting started
 To run the beacon, just compile the project located in the
 sensor_beacon/pca20014/arm4 directory and use the debugger to load the
 firmware by pressing the load button in the Keil uVision IDE.
 
+
 == Firmware
-After the initial setup, the firmware will continuously repeat the following
-steps:
-* Every 10th advertising event and also before the very first advertising
-  event:
-  ** Power up the sensor and the two-wire interface (TWI).
-  ** Read the sensors.
-  ** Power down the sensor and the TWI.
+After the initial setup, the firmware will continuously repeat the following steps:
+* Every 10th advertising event and also before the very first advertising event:
+** Power up the sensor and the two-wire interface (TWI).
+** Read the sensors.
+** Power down the sensor and the TWI.
 * Switch on the external crystal.
 * Send beacon packets (once for each advertising channel index (37, 38 & 39))
 * Switch off the external crystal.
+
 
 === Initial Setup
 The initial setup contains the following steps:
@@ -43,17 +46,19 @@ The initial setup contains the following steps:
 * Initialize the beacon PDU (Protocol Data Unit).
 * Set the advertiser address of the PDU.
 * Reset the sensor data fields of the PDU.
-* Reset the radio hardware configuration to operate in BLE DD (Bluetooth
-  Low Energy Device Discovery) mode.
+* Reset the radio hardware configuration to operate in BLE DD (Bluetooth Low Energy Device Discovery) mode.
 * Start the RTC (Real Time Counter) peripheral.
+
 
 === Power Management
 The sensor beacon saves power by putting the CPU to sleep between every step
 in the firmware sequence above. It also saves power by switching off the crystal
 oscillator and the power to the sensor chip and the TWI. 
 
+
 == Forum
 http://devzone.nordicsemi.com/[Nordic Developer Zone]
+
 
 == Resources
 http://www.nordicsemi.com[Nordic Semiconductor Homepage] 
