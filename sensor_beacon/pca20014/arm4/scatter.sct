@@ -1,0 +1,29 @@
+; *************************************************************
+; *** Scatter-Loading Description File                      ***
+; *************************************************************
+
+; This scatter file is tailored for tests that do NOT use the full softdevice,
+; and do not use the SVC call interface, but have their own main() making direct calls.
+; This is primarily used for link layer target tests. 
+
+; Both the test code and the required parts of the protocol stack and its support libraries.
+; All Flash and RAM space (256K/16K) is made available for the 
+; integrated test and protcol stack code, linked into a single hex file.
+
+; Host layer tests use the SVC interface, like an application, 
+; and should NOT use this scatter file
+
+LR_IROM1 0x00000000 0x000040000  {    ; load region size_region
+  ER_IROM1 0x00000000 0x000040000  {  ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+  }
+
+  SOFTDEVICE_LOAD_END 0x40000 FILL 0xFFFFFFFF 0x0 {  ; Marker for end of SoftDevice Flash (used instead of FICR->CLENR0 in development)
+  }                                                  ; The start value should be set to end of the load region
+                                                   
+  RW_IRAM1 0x20000000 0x00004000  {  ; RW data
+   .ANY (+RW +ZI)
+  }
+}

@@ -1,0 +1,10 @@
+*.uv*x.*
+RTE
+build
+*.uvoptx
+Listings
+Objects
+*.log
+flash.hex
+ram.hex
+cunit_log.txt
