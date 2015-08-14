@@ -1,4 +1,6 @@
 = Sensor Beacon
+
+
 Bluetooth Low Energy based beacon implementation with sensors for the nRF52.
 Works with the nRF52 (tested), but is likely to work for the nRF51 as well
 (not tested). Power performance is, however, not expected to be as good for
@@ -30,6 +32,7 @@ firmware by pressing the load button in the Keil uVision IDE.
 
 == Firmware
 After the initial setup, the firmware will continuously repeat the following steps:
+
 * Every 10th advertising event and also before the very first advertising event:
 ** Power up the sensor and the two-wire interface (TWI).
 ** Read the sensors.
@@ -41,6 +44,7 @@ After the initial setup, the firmware will continuously repeat the following ste
 
 === Initial Setup
 The initial setup contains the following steps:
+
 * Standard Nordic MDK system startup for nRF52 Series.
 * Initialize drivers for accessing the sensor chip.
 * Initialize the beacon PDU (Protocol Data Unit).
