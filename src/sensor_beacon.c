@@ -47,61 +47,60 @@
 #include <stdlib.h>
 
 
-//#define DBG_RADIO_ACTIVE_ENABLE
+/* #define DBG_RADIO_ACTIVE_ENABLE      */
 
-//#define DBG_BEACON_START_PIN    (16)
-//#define DBG_HFCLK_ENABLED_PIN   (27)
-//#define DBG_HFCLK_DISABLED_PIN  (26)
-//#define DBG_PKT_SENT_PIN        (9)
-//#define DBG_CALCULATE_BEGIN_PIN (15)
-//#define DBG_CALCULATE_END_PIN   (15)
-//#define DBG_RADIO_ACTIVE_PIN    (24)
-//#define DBG_WFE_BEGIN_PIN (25)
-//#define DBG_WFE_END_PIN   (25)
+/* #define DBG_BEACON_START_PIN    (16) */
+/* #define DBG_HFCLK_ENABLED_PIN   (27) */
+/* #define DBG_HFCLK_DISABLED_PIN  (26) */
+/* #define DBG_PKT_SENT_PIN        ( 9) */
+/* #define DBG_CALCULATE_BEGIN_PIN (15) */
+/* #define DBG_CALCULATE_END_PIN   (15) */
+/* #define DBG_RADIO_ACTIVE_PIN    (24) */
+/* #define DBG_WFE_BEGIN_PIN       (25) */
+/* #define DBG_WFE_END_PIN         (25) */
 
 
-//#define DBG_BEACON_START                              \
-//{                                                     \
-//    NRF_GPIO->OUTSET = (1 << DBG_BEACON_START_PIN);   \
-//    NRF_GPIO->DIRSET = (1 << DBG_BEACON_START_PIN);   \
-//    NRF_GPIO->DIRCLR = (1 << DBG_BEACON_START_PIN);   \
-//    NRF_GPIO->OUTCLR = (1 << DBG_BEACON_START_PIN);   \
-//}                                                     
-//#define DBG_HFCLK_ENABLED                             \
-//{                                                     \
-//    NRF_GPIO->OUTSET = (1 << DBG_HFCLK_ENABLED_PIN);  \
-//    NRF_GPIO->DIRSET = (1 << DBG_HFCLK_ENABLED_PIN);  \
-//    NRF_GPIO->DIRCLR = (1 << DBG_HFCLK_ENABLED_PIN);  \
-//    NRF_GPIO->OUTCLR = (1 << DBG_HFCLK_ENABLED_PIN);  \
-//}                                                     
-//#define DBG_HFCLK_DISABLED                            \
-//{                                                     \
-//    NRF_GPIO->OUTSET = (1 << DBG_HFCLK_DISABLED_PIN); \
-//    NRF_GPIO->DIRSET = (1 << DBG_HFCLK_DISABLED_PIN); \
-//    NRF_GPIO->DIRCLR = (1 << DBG_HFCLK_DISABLED_PIN); \
-//    NRF_GPIO->OUTCLR = (1 << DBG_HFCLK_DISABLED_PIN); \
-//}                                                     
-//#define DBG_PKT_SENT                                   \
-//{                                                      \
-//    NRF_GPIO->OUTSET = (1 << DBG_PKT_SENT_PIN);        \
-//    NRF_GPIO->DIRSET = (1 << DBG_PKT_SENT_PIN);        \
-//    NRF_GPIO->DIRCLR = (1 << DBG_PKT_SENT_PIN);        \
-//    NRF_GPIO->OUTCLR = (1 << DBG_PKT_SENT_PIN);        \
-//}                                                      
-//#define DBG_WFE_BEGIN                            \
-//{                                                \
-//    NRF_GPIO->OUTCLR = (1 << DBG_WFE_BEGIN_PIN); \
-//    NRF_GPIO->DIRSET = (1 << DBG_WFE_BEGIN_PIN); \
-//    NRF_GPIO->OUTSET = (1 << DBG_WFE_BEGIN_PIN); \
-//    for ( int i = 0; i < 0xFF; i++ ) __NOP();\
-//    NRF_GPIO->OUTCLR = (1 << DBG_WFE_BEGIN_PIN); \
-//}
-//#define DBG_WFE_END                              \
-//{                                                \
-//    for ( int i = 0; i < 0xFF; i++ ) __NOP();\
-//    NRF_GPIO->OUTSET = (1 << DBG_WFE_END_PIN);   \
-//    /*NRF_GPIO->DIRSET = (1 << DBG_WFE_END_PIN);*/   \
-//}
+/* #define DBG_BEACON_START                           \
+{                                                     \
+    NRF_GPIO->OUTSET = (1 << DBG_BEACON_START_PIN);   \
+    NRF_GPIO->DIRSET = (1 << DBG_BEACON_START_PIN);   \
+    NRF_GPIO->DIRCLR = (1 << DBG_BEACON_START_PIN);   \
+    NRF_GPIO->OUTCLR = (1 << DBG_BEACON_START_PIN);   \
+} */
+/* #define DBG_HFCLK_ENABLED                          \
+{                                                     \
+    NRF_GPIO->OUTSET = (1 << DBG_HFCLK_ENABLED_PIN);  \
+    NRF_GPIO->DIRSET = (1 << DBG_HFCLK_ENABLED_PIN);  \
+    NRF_GPIO->DIRCLR = (1 << DBG_HFCLK_ENABLED_PIN);  \
+    NRF_GPIO->OUTCLR = (1 << DBG_HFCLK_ENABLED_PIN);  \
+} */
+/* #define DBG_HFCLK_DISABLED                         \
+{                                                     \
+    NRF_GPIO->OUTSET = (1 << DBG_HFCLK_DISABLED_PIN); \
+    NRF_GPIO->DIRSET = (1 << DBG_HFCLK_DISABLED_PIN); \
+    NRF_GPIO->DIRCLR = (1 << DBG_HFCLK_DISABLED_PIN); \
+    NRF_GPIO->OUTCLR = (1 << DBG_HFCLK_DISABLED_PIN); \
+} */
+/* #define DBG_PKT_SENT                               \
+{                                                     \
+    NRF_GPIO->OUTSET = (1 << DBG_PKT_SENT_PIN);       \
+    NRF_GPIO->DIRSET = (1 << DBG_PKT_SENT_PIN);       \
+    NRF_GPIO->DIRCLR = (1 << DBG_PKT_SENT_PIN);       \
+    NRF_GPIO->OUTCLR = (1 << DBG_PKT_SENT_PIN);       \
+} */
+/* #define DBG_WFE_BEGIN                              \
+{                                                     \
+    NRF_GPIO->OUTCLR = (1 << DBG_WFE_BEGIN_PIN);      \
+    NRF_GPIO->DIRSET = (1 << DBG_WFE_BEGIN_PIN);      \
+    NRF_GPIO->OUTSET = (1 << DBG_WFE_BEGIN_PIN);      \
+    for ( int i = 0; i < 0xFF; i++ ) __NOP();         \
+    NRF_GPIO->OUTCLR = (1 << DBG_WFE_BEGIN_PIN);      \
+} */
+/* #define DBG_WFE_END                                \
+{                                                     \
+    for ( int i = 0; i < 0xFF; i++ ) __NOP();         \
+    NRF_GPIO->OUTSET = (1 << DBG_WFE_END_PIN);        \
+} */
 
 
 #ifndef DBG_BEACON_START
@@ -314,7 +313,11 @@ static void m_beacon_pdu_sensor_data_set(uint8_t * p_beacon_pdu, int32_t *p_temp
 
 /* Waits for the next NVIC event.
  */
+#ifdef __GNUC__
+static void __INLINE cpu_wfe(void)
+#else
 static void __forceinline cpu_wfe(void)
+#endif
 {
     DBG_WFE_BEGIN;
     __WFE();
